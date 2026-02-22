@@ -73,6 +73,7 @@ src/test/focus/
 ```
 
 Run with `npm test` (vitest). Each test file has:
+
 - Two "parses a valid row" tests using fixtures
 - One "rejects empty object" test
 - One "rejects wrong type on a mandatory numeric field" test

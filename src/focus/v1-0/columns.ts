@@ -58,7 +58,7 @@ export const columns: FocusColumn[] = [
     name: "ChargeClass",
     dataType: "String",
     status: "Mandatory",
-    description: "The classification of the charge (e.g., Regular, Correction).",
+    description: 'Null for regular charges; "Correction" when the row corrects a prior-period charge.',
   },
   {
     name: "ChargeDescription",

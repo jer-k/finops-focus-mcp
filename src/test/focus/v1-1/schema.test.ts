@@ -17,8 +17,7 @@ const albUsageRow = {
   BillingPeriodStart: "2024-09-01 00:00:00",
   ChargeCategory: "Usage",
   ChargeClass: null, // NULL in sample data; only "Correction" for correction rows
-  ChargeDescription:
-    "$0.008 per used Application load balancer capacity unit-hour (or partial hour)",
+  ChargeDescription: "$0.008 per used Application load balancer capacity unit-hour (or partial hour)",
   ChargePeriodEnd: "2024-09-30 23:00:00",
   ChargePeriodStart: "2024-09-30 22:00:00",
   InvoiceIssuerName: "Amazon Web Services, Inc.",
@@ -57,8 +56,7 @@ const dataTransferRow = {
   BillingPeriodStart: "2024-09-01 00:00:00",
   ChargeCategory: "Usage",
   ChargeClass: null, // NULL in sample data; only "Correction" for correction rows
-  ChargeDescription:
-    "$0.00 per GB - US West (Oregon) data transfer from Asia Pacific (Singapore)",
+  ChargeDescription: "$0.00 per GB - US West (Oregon) data transfer from Asia Pacific (Singapore)",
   ChargePeriodEnd: "2024-09-24 17:00:00",
   ChargePeriodStart: "2024-09-24 16:00:00",
   InvoiceIssuerName: "Amazon Web Services, Inc.",
