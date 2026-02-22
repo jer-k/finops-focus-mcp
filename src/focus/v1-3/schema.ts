@@ -33,7 +33,7 @@ export const CostAndUsageRow = Schema.Struct({
   BillingPeriodEnd: Schema.String,
   BillingPeriodStart: Schema.String,
   ChargeCategory: Schema.String,
-  ChargeClass: Schema.String,
+  ChargeClass: Schema.NullOr(Schema.Literal("Correction")),
   ChargeDescription: Schema.String,
   ChargePeriodEnd: Schema.String,
   ChargePeriodStart: Schema.String,
