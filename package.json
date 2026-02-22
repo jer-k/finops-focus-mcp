@@ -1,6 +1,6 @@
 {
-	"name": "remote-mcp-server-authless",
-	"version": "0.0.0",
+	"name": "finops-focus-mcp",
+	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"deploy": "wrangler deploy",
@@ -13,6 +13,7 @@
 	},
 	"dependencies": {
 		"agents": "^0.5.0",
+		"effect": "4.0.0-beta.10",
 		"zod": "^4.3.6"
 	},
 	"devDependencies": {
