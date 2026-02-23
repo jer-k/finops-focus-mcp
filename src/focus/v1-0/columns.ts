@@ -145,10 +145,10 @@ export const columns: FocusColumn[] = [
     description: "The amortized cost inclusive of the impact of commitment-based discounts.",
   },
   {
-    name: "InvoiceIssuer",
+    name: "InvoiceIssuerName",
     dataType: "String",
     status: "Mandatory",
-    description: "The entity responsible for invoicing the customer.",
+    description: "The name of the entity responsible for invoicing the customer.",
   },
   {
     name: "ListCost",
@@ -181,16 +181,16 @@ export const columns: FocusColumn[] = [
     description: "The unit of measure used for pricing calculations.",
   },
   {
-    name: "Provider",
+    name: "ProviderName",
     dataType: "String",
     status: "Mandatory",
-    description: "The entity that made the resources or services available for purchase.",
+    description: "The name of the entity that made the resources or services available for purchase.",
   },
   {
-    name: "Publisher",
+    name: "PublisherName",
     dataType: "String",
     status: "Mandatory",
-    description: "The entity that provides the resources or services.",
+    description: "The name of the entity that provides the resources or services.",
   },
   {
     name: "RegionId",

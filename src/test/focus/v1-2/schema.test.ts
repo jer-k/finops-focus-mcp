@@ -3,9 +3,9 @@ import { describe, expect, it } from "vitest";
 import { CostAndUsageRow } from "../../../focus/v1-2/schema";
 
 // Fixtures adapted from tmp/focus-sample-data/FOCUS-1.0/focus_sample.csv
-// v1.2 uses `Provider` (mandatory) where the CSV has `ProviderName`.
-// `InvoiceIssuer` and `Publisher` are conditional (optional) in v1.2 — included here
-// since the values are present in the sample data.
+// v1.2 uses `ProviderName`, `PublisherName`, `InvoiceIssuerName` (v1.1 renames carried into v1.2).
+// ContractedCost, EffectiveCost, ListCost, PricingQuantity, PricingUnit are Mandatory in v1.2.
+// SubAccountId and SubAccountName are Conditional (optional) in v1.2.
 // NULL values in the CSV are omitted. Numeric fields are cast from strings to numbers.
 
 const sqsUsageRow = {
@@ -21,17 +21,19 @@ const sqsUsageRow = {
   ChargeDescription: "$0.40 per million Amazon SQS standard requests in Tier1 in US West (Oregon)",
   ChargePeriodEnd: "2024-09-18 23:00:00",
   ChargePeriodStart: "2024-09-18 22:00:00",
-  Provider: "AWS", // CSV: ProviderName
+  ContractedCost: 0,
+  EffectiveCost: 0,
+  InvoiceIssuerName: "Amazon Web Services, Inc.",
+  ListCost: 0.0000008,
+  PricingQuantity: 2,
+  PricingUnit: "Requests",
+  ProviderName: "AWS",
+  PublisherName: "Amazon Web Services, Inc.",
   ServiceCategory: "Integration",
   ServiceName: "Amazon Simple Queue Service",
-  SubAccountId: "51738928782",
-  SubAccountName: "Atlas Nimbus",
   // Recommended (optional)
   ChargeFrequency: "Usage-Based",
-  ContractedCost: 0,
   ContractedUnitPrice: 0,
-  EffectiveCost: 0,
-  ListCost: 0.0000008,
   ListUnitPrice: 0.0000004,
   PricingCategory: "Standard",
   RegionId: "us-west-2",
@@ -42,10 +44,8 @@ const sqsUsageRow = {
   // Conditional (optional)
   ConsumedQuantity: 2,
   ConsumedUnit: "Requests",
-  InvoiceIssuer: "Amazon Web Services, Inc.", // CSV: InvoiceIssuerName
-  PricingQuantity: 2,
-  PricingUnit: "Requests",
-  Publisher: "Amazon Web Services, Inc.", // CSV: PublisherName
+  SubAccountId: "51738928782",
+  SubAccountName: "Atlas Nimbus",
 };
 
 const albUsageRow = {
@@ -61,17 +61,19 @@ const albUsageRow = {
   ChargeDescription: "$0.008 per used Application load balancer capacity unit-hour (or partial hour)",
   ChargePeriodEnd: "2024-09-30 23:00:00",
   ChargePeriodStart: "2024-09-30 22:00:00",
-  Provider: "AWS",
+  ContractedCost: 0,
+  EffectiveCost: 0,
+  InvoiceIssuerName: "Amazon Web Services, Inc.",
+  ListCost: 0.0000160599,
+  PricingQuantity: 0.00200749,
+  PricingUnit: "LCU-Hours",
+  ProviderName: "AWS",
+  PublisherName: "Amazon Web Services, Inc.",
   ServiceCategory: "Networking",
   ServiceName: "Elastic Load Balancing",
-  SubAccountId: "43883916739",
-  SubAccountName: "Zenith Eclipse",
   // Recommended (optional)
   ChargeFrequency: "Usage-Based",
-  ContractedCost: 0,
   ContractedUnitPrice: 0,
-  EffectiveCost: 0,
-  ListCost: 0.0000160599,
   ListUnitPrice: 0.008,
   PricingCategory: "Standard",
   RegionId: "us-west-2",
@@ -84,10 +86,8 @@ const albUsageRow = {
   // Conditional (optional)
   ConsumedQuantity: 0.00200749,
   ConsumedUnit: "LCU-Hours",
-  InvoiceIssuer: "Amazon Web Services, Inc.",
-  PricingQuantity: 0.00200749,
-  PricingUnit: "LCU-Hours",
-  Publisher: "Amazon Web Services, Inc.",
+  SubAccountId: "43883916739",
+  SubAccountName: "Zenith Eclipse",
 };
 
 describe("CostAndUsageRow v1.2", () => {

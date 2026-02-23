@@ -17,12 +17,12 @@ const sqsUsageRow = {
   ChargePeriodStart: "2024-09-18 22:00:00",
   ContractedCost: 0,
   EffectiveCost: 0,
-  InvoiceIssuer: "Amazon Web Services, Inc.", // CSV: InvoiceIssuerName
+  InvoiceIssuerName: "Amazon Web Services, Inc.",
   ListCost: 0.0000008,
   PricingQuantity: 2,
   PricingUnit: "Requests",
-  Provider: "AWS", // CSV: ProviderName
-  Publisher: "Amazon Web Services, Inc.", // CSV: PublisherName
+  ProviderName: "AWS",
+  PublisherName: "Amazon Web Services, Inc.",
   ServiceCategory: "Integration",
   ServiceName: "Amazon Simple Queue Service",
   // Optional
@@ -56,12 +56,12 @@ const dataTransferRow = {
   ChargePeriodStart: "2024-09-24 16:00:00",
   ContractedCost: 0,
   EffectiveCost: 0,
-  InvoiceIssuer: "Amazon Web Services, Inc.",
+  InvoiceIssuerName: "Amazon Web Services, Inc.",
   ListCost: 0,
   PricingQuantity: 0.0002355203,
   PricingUnit: "GB",
-  Provider: "AWS",
-  Publisher: "Amazon Web Services, Inc.",
+  ProviderName: "AWS",
+  PublisherName: "Amazon Web Services, Inc.",
   ServiceCategory: "Networking",
   ServiceName: "Elastic Load Balancing",
   // Optional
