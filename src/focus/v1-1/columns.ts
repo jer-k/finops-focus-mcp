@@ -70,7 +70,7 @@ export const columns: FocusColumn[] = [
     name: "ChargeClass",
     dataType: "String",
     status: "Mandatory",
-    description: "The classification of the charge (e.g., Regular, Correction).",
+    description: 'Null for regular charges; "Correction" when the row corrects a prior-period charge.',
   },
   {
     name: "ChargeDescription",
@@ -250,19 +250,19 @@ export const columns: FocusColumn[] = [
   {
     name: "ServiceCategory",
     dataType: "String",
-    status: "Conditional",
+    status: "Mandatory",
     description: "The highest-level classification of a service based on its core function.",
   },
   {
     name: "ServiceName",
     dataType: "String",
-    status: "Conditional",
+    status: "Mandatory",
     description: "An offering that can be purchased from a provider.",
   },
   {
     name: "ServiceSubcategory",
     dataType: "String",
-    status: "Conditional",
+    status: "Recommended",
     description: "A secondary classification of a service that provides additional detail within a ServiceCategory.",
   },
   {
