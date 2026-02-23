@@ -10,8 +10,9 @@ export const costAndUsageColumns: FocusColumn[] = [
   {
     name: "AllocatedMethodDetails",
     dataType: "JSON",
-    status: "Conditional",
-    description: "Additional details about the allocation method used to split costs.",
+    status: "Recommended",
+    description:
+      "A set of properties describing how resources are allocated in data generator-defined split cost allocation.",
   },
   {
     name: "AllocatedMethodId",
@@ -35,7 +36,8 @@ export const costAndUsageColumns: FocusColumn[] = [
     name: "AllocatedTags",
     dataType: "JSON",
     status: "Conditional",
-    description: "Tags associated with the resource the cost was allocated to.",
+    description:
+      "A set of tags assigned to tag sources that are applicable to allocated charges in data generator-calculated split cost allocation.",
   },
   {
     name: "AvailabilityZone",
@@ -101,13 +103,13 @@ export const costAndUsageColumns: FocusColumn[] = [
     name: "ChargeCategory",
     dataType: "String",
     status: "Mandatory",
-    description: "The category of the charge (e.g., Usage, Purchase, Tax, Credit, Adjustment).",
+    description: "The category of the charge. Allowed values: Usage, Purchase, Tax, Credit, Adjustment.",
   },
   {
     name: "ChargeClass",
     dataType: "String",
     status: "Mandatory",
-    description: "The classification of the charge (e.g., Regular, Correction).",
+    description: "Indicates whether the row represents a correction to a previously invoiced billing period.",
   },
   {
     name: "ChargeDescription",
@@ -119,7 +121,7 @@ export const costAndUsageColumns: FocusColumn[] = [
     name: "ChargeFrequency",
     dataType: "String",
     status: "Recommended",
-    description: "The frequency of the charge (e.g., One-Time, Recurring, Usage-Based).",
+    description: "The frequency of the charge. Allowed values: One-Time, Recurring, Usage-Based.",
   },
   {
     name: "ChargePeriodEnd",
@@ -137,7 +139,7 @@ export const costAndUsageColumns: FocusColumn[] = [
     name: "CommitmentDiscountCategory",
     dataType: "String",
     status: "Conditional",
-    description: "The category of commitment discount applied (e.g., Spend, Usage).",
+    description: "The category of commitment discount applied. Allowed values: Spend, Usage.",
   },
   {
     name: "CommitmentDiscountId",
@@ -161,13 +163,14 @@ export const costAndUsageColumns: FocusColumn[] = [
     name: "CommitmentDiscountStatus",
     dataType: "String",
     status: "Conditional",
-    description: "The status of the commitment discount (e.g., Used, Unused).",
+    description:
+      "Indicates whether the charge corresponds to the used or unused portion of a commitment discount. Allowed values: Used, Unused.",
   },
   {
     name: "CommitmentDiscountType",
     dataType: "String",
     status: "Conditional",
-    description: "The type of commitment discount (e.g., Reserved, Savings Plan).",
+    description: "The type of commitment discount applied.",
   },
   {
     name: "CommitmentDiscountUnit",
@@ -192,7 +195,7 @@ export const costAndUsageColumns: FocusColumn[] = [
     name: "ContractApplied",
     dataType: "JSON",
     status: "Conditional",
-    description: "Identifies the contracts applicable to the charge.",
+    description: "A set of properties that associate a charge with one or more contract commitments.",
   },
   {
     name: "ContractedCost",
@@ -203,7 +206,7 @@ export const costAndUsageColumns: FocusColumn[] = [
   {
     name: "ContractedUnitPrice",
     dataType: "Decimal",
-    status: "Recommended",
+    status: "Conditional",
     description: "The contracted unit price for the pricing unit.",
   },
   {
@@ -225,16 +228,10 @@ export const costAndUsageColumns: FocusColumn[] = [
     description: "The identifier of the invoice associated with the charge.",
   },
   {
-    name: "InvoiceIssuer",
-    dataType: "String",
-    status: "Conditional",
-    description: "The name of the entity responsible for invoicing the customer.",
-  },
-  {
     name: "InvoiceIssuerName",
     dataType: "String",
     status: "Mandatory",
-    description: "The name of the entity responsible for invoicing the customer. Replaces Publisher.",
+    description: "The name of the entity responsible for invoicing the customer.",
   },
   {
     name: "ListCost",
@@ -245,64 +242,65 @@ export const costAndUsageColumns: FocusColumn[] = [
   {
     name: "ListUnitPrice",
     dataType: "Decimal",
-    status: "Recommended",
+    status: "Conditional",
     description: "The list unit price for the pricing unit, before any discounts.",
   },
   {
     name: "PricingCategory",
     dataType: "String",
-    status: "Recommended",
-    description: "The pricing model used (e.g., Standard, Dynamic, Committed).",
+    status: "Conditional",
+    description: "The pricing model used. Allowed values: Standard, Dynamic, Committed, Other.",
   },
   {
     name: "PricingCurrency",
     dataType: "String",
-    status: "Recommended",
+    status: "Conditional",
     description: "The currency used for pricing prior to conversion to the billing currency.",
   },
   {
     name: "PricingCurrencyContractedUnitPrice",
     dataType: "Decimal",
-    status: "Recommended",
+    status: "Conditional",
     description: "The contracted unit price expressed in the pricing currency.",
   },
   {
     name: "PricingCurrencyEffectiveCost",
     dataType: "Decimal",
-    status: "Recommended",
+    status: "Conditional",
     description: "The effective cost expressed in the pricing currency.",
   },
   {
     name: "PricingCurrencyListUnitPrice",
     dataType: "Decimal",
-    status: "Recommended",
+    status: "Conditional",
     description: "The list unit price expressed in the pricing currency.",
   },
   {
     name: "PricingQuantity",
     dataType: "Decimal",
-    status: "Conditional",
+    status: "Mandatory",
     description: "The quantity used for pricing calculations.",
   },
   {
     name: "PricingUnit",
     dataType: "String",
-    status: "Conditional",
-    description: "The unit of measure used for pricing calculations.",
+    status: "Mandatory",
+    description: "Service-provider-specified measurement unit for determining unit prices.",
   },
   {
-    name: "Provider",
+    name: "ProviderName",
     dataType: "String",
     status: "Mandatory",
     description:
-      "The entity that made the resources or services available for purchase. Use ServiceProviderName instead.",
+      "The name of the entity that made the resources or services available for purchase. Deprecated in 1.3 — use ServiceProviderName instead.",
     deprecated: true,
   },
   {
-    name: "Publisher",
+    name: "PublisherName",
     dataType: "String",
-    status: "Conditional",
-    description: "The entity that provides the resources or services. Use InvoiceIssuerName instead.",
+    status: "Mandatory",
+    description:
+      "The name of the entity that produced the resources or services that were purchased. Deprecated in 1.3.",
     deprecated: true,
   },
   {
@@ -314,7 +312,7 @@ export const costAndUsageColumns: FocusColumn[] = [
   {
     name: "RegionName",
     dataType: "String",
-    status: "Recommended",
+    status: "Conditional",
     description: "The name of the geographic area where the resource is located.",
   },
   {
@@ -326,13 +324,13 @@ export const costAndUsageColumns: FocusColumn[] = [
   {
     name: "ResourceName",
     dataType: "String",
-    status: "Recommended",
+    status: "Conditional",
     description: "The name of the resource.",
   },
   {
     name: "ResourceType",
     dataType: "String",
-    status: "Recommended",
+    status: "Conditional",
     description: "The type or category of the resource.",
   },
   {
@@ -352,7 +350,7 @@ export const costAndUsageColumns: FocusColumn[] = [
     dataType: "String",
     status: "Mandatory",
     description:
-      "The name of the entity that made the resources or services available for purchase. Replaces Provider.",
+      "The name of the entity that made the resources or services available for purchase. Replaces deprecated ProviderName.",
   },
   {
     name: "ServiceSubcategory",
@@ -363,37 +361,38 @@ export const costAndUsageColumns: FocusColumn[] = [
   {
     name: "SkuId",
     dataType: "String",
-    status: "Recommended",
+    status: "Conditional",
     description: "The identifier of the cloud product in the provider's catalog.",
   },
   {
     name: "SkuMeter",
     dataType: "String",
-    status: "Recommended",
+    status: "Conditional",
     description: "The name of the measurement type used to identify the unit of measure for a specific SKU resource.",
   },
   {
     name: "SkuPriceDetails",
-    dataType: "String",
-    status: "Recommended",
-    description: "Additional pricing details for the given SKU price.",
+    dataType: "JSON",
+    status: "Conditional",
+    description:
+      "A set of properties of a SKU Price ID which are meaningful and common to all instances of that SKU Price ID.",
   },
   {
     name: "SkuPriceId",
     dataType: "String",
-    status: "Recommended",
+    status: "Conditional",
     description: "The identifier for the price of a given SKU.",
   },
   {
     name: "SubAccountId",
     dataType: "String",
-    status: "Mandatory",
-    description: "The identifier of the sub-account or project responsible for the costs.",
+    status: "Conditional",
+    description: "An ID assigned to a grouping of resources or services, often used to manage access and/or cost.",
   },
   {
     name: "SubAccountName",
     dataType: "String",
-    status: "Mandatory",
+    status: "Conditional",
     description: "The name of the sub-account or project responsible for the costs.",
   },
   {
@@ -404,9 +403,10 @@ export const costAndUsageColumns: FocusColumn[] = [
   },
   {
     name: "Tags",
-    dataType: "KeyValue",
-    status: "Recommended",
-    description: "A set of key-value pairs applied to the resource or service.",
+    dataType: "JSON",
+    status: "Conditional",
+    description:
+      "The set of tags assigned to tag sources that account for potential provider-defined or user-defined tag evaluations.",
   },
 ];
 
@@ -418,28 +418,28 @@ export const contractCommitmentColumns: FocusColumn[] = [
     description: "The currency used for the billing of the contract commitment.",
   },
   {
+    name: "ContractCommitmentCategory",
+    dataType: "String",
+    status: "Mandatory",
+    description: "The category of the contract commitment. Allowed values: Spend, Usage.",
+  },
+  {
     name: "ContractCommitmentCost",
     dataType: "Decimal",
     status: "Mandatory",
     description: "The cost associated with the contract commitment.",
   },
   {
-    name: "ContractCommitmentId",
-    dataType: "String",
-    status: "Mandatory",
-    description: "The identifier of the contract commitment.",
-  },
-  {
-    name: "ContractCommitmentCategory",
-    dataType: "String",
-    status: "Mandatory",
-    description: "The category of the contract commitment.",
-  },
-  {
     name: "ContractCommitmentDescription",
     dataType: "String",
     status: "Mandatory",
     description: "A description of the contract commitment.",
+  },
+  {
+    name: "ContractCommitmentId",
+    dataType: "String",
+    status: "Mandatory",
+    description: "The identifier of the contract commitment.",
   },
   {
     name: "ContractCommitmentPeriodEnd",

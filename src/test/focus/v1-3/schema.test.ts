@@ -30,10 +30,13 @@ const sqsUsageRow = {
   ServiceCategory: "Integration",
   ServiceName: "Amazon Simple Queue Service",
   ServiceProviderName: "Amazon Web Services, Inc.", // CSV: PublisherName (cloud service provider)
-  SubAccountId: "51738928782",
-  SubAccountName: "Atlas Nimbus",
+  PricingQuantity: 2,
+  PricingUnit: "Requests",
   // Recommended (optional)
   ChargeFrequency: "Usage-Based",
+  // Conditional (optional)
+  ConsumedQuantity: 2,
+  ConsumedUnit: "Requests",
   ContractedUnitPrice: 0,
   ListUnitPrice: 0.0000004,
   PricingCategory: "Standard",
@@ -42,14 +45,11 @@ const sqsUsageRow = {
   ResourceId: "arn:ats:sqs:us-test-2:347410479675:mibelllmel-i-032l64f2065481b12",
   SkuId: "G95FST5FTYV3JSRX",
   SkuPriceId: "G95FST5FTYV3JSRX.JRTCKXETXF.VXGXCWQKTY",
+  SubAccountId: "51738928782",
+  SubAccountName: "Atlas Nimbus",
   // Deprecated (still accepted by schema)
-  Provider: "AWS",
-  Publisher: "Amazon Web Services, Inc.",
-  // Conditional (optional)
-  ConsumedQuantity: 2,
-  ConsumedUnit: "Requests",
-  PricingQuantity: 2,
-  PricingUnit: "Requests",
+  ProviderName: "AWS",
+  PublisherName: "Amazon Web Services, Inc.",
 };
 
 const albUsageRow = {
@@ -73,10 +73,13 @@ const albUsageRow = {
   ServiceCategory: "Networking",
   ServiceName: "Elastic Load Balancing",
   ServiceProviderName: "Amazon Web Services, Inc.",
-  SubAccountId: "43883916739",
-  SubAccountName: "Zenith Eclipse",
+  PricingQuantity: 0.00200749,
+  PricingUnit: "LCU-Hours",
   // Recommended (optional)
   ChargeFrequency: "Usage-Based",
+  // Conditional (optional)
+  ConsumedQuantity: 0.00200749,
+  ConsumedUnit: "LCU-Hours",
   ContractedUnitPrice: 0,
   ListUnitPrice: 0.008,
   PricingCategory: "Standard",
@@ -86,15 +89,12 @@ const albUsageRow = {
     "arn:ats:emastilmoalfamanling:us-test-2:586597448978:moalfamanler/app/tungsten-lonbmuenle-amf/l365455f461l4e4a",
   SkuId: "2ETY8Y426S4237JU",
   SkuPriceId: "2ETY8Y426S4237JU.JRTCKXETXF.6YS6EN2CT7",
+  SubAccountId: "43883916739",
+  SubAccountName: "Zenith Eclipse",
   Tags: { application: "BrightLensMatrix", environment: "dev", business_unit: "ViennaAI" },
   // Deprecated (still accepted by schema)
-  Provider: "AWS",
-  Publisher: "Amazon Web Services, Inc.",
-  // Conditional (optional)
-  ConsumedQuantity: 0.00200749,
-  ConsumedUnit: "LCU-Hours",
-  PricingQuantity: 0.00200749,
-  PricingUnit: "LCU-Hours",
+  ProviderName: "AWS",
+  PublisherName: "Amazon Web Services, Inc.",
 };
 
 describe("CostAndUsageRow v1.3", () => {
