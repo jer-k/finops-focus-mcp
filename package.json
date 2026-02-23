@@ -6,6 +6,7 @@
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "format": "oxfmt --write .",
+    "generate": "tsx scripts/generate-focus-docs.ts",
     "lint:fix": "oxlint --fix",
     "start": "wrangler dev",
     "cf-typegen": "wrangler types",
@@ -21,6 +22,7 @@
     "@types/node": "^25.3.0",
     "oxfmt": "^0.34.0",
     "oxlint": "^1.49.0",
+    "tsx": "^4.19.4",
     "typescript": "5.9.3",
     "vitest": "^3.2.4",
     "wrangler": "^4.67.0"
