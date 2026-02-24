@@ -18,7 +18,7 @@ export function registerV12Resource(server: McpServer) {
           text: stripComment(v12Jsonc),
         },
       ],
-    }),
+    })
   );
 
   server.registerResource(
@@ -27,6 +27,6 @@ export function registerV12Resource(server: McpServer) {
     { mimeType: "text/markdown" },
     async (uri) => ({
       contents: [{ uri: uri.href, mimeType: "text/markdown", text: v12Md }],
-    }),
+    })
   );
 }

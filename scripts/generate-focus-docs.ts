@@ -95,7 +95,7 @@ function analyzeField(ast: SchemaAST.AST): {
 }
 
 function buildFieldInfoMap(
-  schemaAst: SchemaAST.AST,
+  schemaAst: SchemaAST.AST
 ): Map<string, { nullable: boolean; allowedValues: string[] | null }> {
   const map = new Map<string, { nullable: boolean; allowedValues: string[] | null }>();
   // In Effect v4 beta, Schema.Struct produces an AST with _tag "Objects"
@@ -214,7 +214,7 @@ const v13CCEnriched = enrichColumns(v13ContractCommitmentColumns as BaseColumn[]
 writeFiles(
   join(srcDir, "v1-3"),
   buildJsonV13(v13CUEnriched, v13CCEnriched),
-  buildMarkdownV13(v13CUEnriched, v13CCEnriched),
+  buildMarkdownV13(v13CUEnriched, v13CCEnriched)
 );
 console.log("✓ v1.3");
 

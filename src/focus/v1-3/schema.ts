@@ -8,7 +8,7 @@ const AllocatedMethodDetailsElement = Schema.Struct({
   UsageQuantity: Schema.optional(Schema.Number),
 });
 
-const AllocatedMethodDetails = Schema.Struct({
+export const AllocatedMethodDetails = Schema.Struct({
   Elements: Schema.Array(AllocatedMethodDetailsElement),
 });
 
@@ -23,7 +23,7 @@ const ContractAppliedElement = Schema.Struct({
   ContractCommitmentAppliedUnit: Schema.optional(Schema.NullOr(Schema.String)),
 });
 
-const ContractApplied = Schema.Struct({
+export const ContractApplied = Schema.Struct({
   Elements: Schema.Array(ContractAppliedElement),
 });
 
