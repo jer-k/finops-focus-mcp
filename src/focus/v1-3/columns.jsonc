@@ -12,7 +12,7 @@
         "status": "Recommended",
         "description": "A set of properties describing how resources are allocated in data generator-defined split cost allocation.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "AllocatedMethodId",
@@ -23,7 +23,7 @@
         "status": "Conditional",
         "description": "The identifier of the allocation method used to split costs.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "AllocatedResourceId",
@@ -34,7 +34,7 @@
         "status": "Conditional",
         "description": "The identifier of the resource the cost was allocated to.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "AllocatedResourceName",
@@ -45,7 +45,7 @@
         "status": "Conditional",
         "description": "The name of the resource the cost was allocated to.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "AllocatedTags",
@@ -56,7 +56,7 @@
         "status": "Conditional",
         "description": "A set of tags assigned to tag sources that are applicable to allocated charges in data generator-calculated split cost allocation.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "AvailabilityZone",
@@ -67,7 +67,7 @@
         "status": "Recommended",
         "description": "The availability zone in which a resource is running or a service is provided.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "BilledCost",
@@ -78,7 +78,7 @@
         "status": "Mandatory",
         "description": "The amount charged to the buyer, net of any discounts applied, after any applicable credits.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "BillingAccountId",
@@ -89,7 +89,7 @@
         "status": "Mandatory",
         "description": "The identifier of the billing account responsible for the costs.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "BillingAccountName",
@@ -100,7 +100,7 @@
         "status": "Mandatory",
         "description": "The name of the billing account responsible for the costs.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "BillingAccountType",
@@ -111,7 +111,7 @@
         "status": "Conditional",
         "description": "The type of the billing account responsible for the costs.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "BillingCurrency",
@@ -122,7 +122,7 @@
         "status": "Mandatory",
         "description": "The currency used for the billing of the cost.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "BillingPeriodEnd",
@@ -133,7 +133,7 @@
         "status": "Mandatory",
         "description": "The end date and time of the billing period.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "BillingPeriodStart",
@@ -144,7 +144,7 @@
         "status": "Mandatory",
         "description": "The start date and time of the billing period.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "CapacityReservationId",
@@ -155,7 +155,7 @@
         "status": "Conditional",
         "description": "The identifier assigned to a capacity reservation by the provider.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "CapacityReservationStatus",
@@ -166,7 +166,7 @@
         "status": "Conditional",
         "description": "Indicates whether a charge represents consumption or the unused portion of a capacity reservation.",
         "nullable": true,
-        "allowedValues": ["Used", "Unused"],
+        "allowedValues": ["Used", "Unused"]
       },
       {
         "name": "ChargeCategory",
@@ -177,7 +177,7 @@
         "status": "Mandatory",
         "description": "The category of the charge. Allowed values: Usage, Purchase, Tax, Credit, Adjustment.",
         "nullable": false,
-        "allowedValues": ["Usage", "Purchase", "Tax", "Credit", "Adjustment"],
+        "allowedValues": ["Usage", "Purchase", "Tax", "Credit", "Adjustment"]
       },
       {
         "name": "ChargeClass",
@@ -188,7 +188,7 @@
         "status": "Mandatory",
         "description": "Indicates whether the row represents a correction to a previously invoiced billing period.",
         "nullable": true,
-        "allowedValues": ["Correction"],
+        "allowedValues": ["Correction"]
       },
       {
         "name": "ChargeDescription",
@@ -199,7 +199,7 @@
         "status": "Mandatory",
         "description": "A description of the charge.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ChargeFrequency",
@@ -210,7 +210,7 @@
         "status": "Recommended",
         "description": "The frequency of the charge. Allowed values: One-Time, Recurring, Usage-Based.",
         "nullable": false,
-        "allowedValues": ["One-Time", "Recurring", "Usage-Based"],
+        "allowedValues": ["One-Time", "Recurring", "Usage-Based"]
       },
       {
         "name": "ChargePeriodEnd",
@@ -221,7 +221,7 @@
         "status": "Mandatory",
         "description": "The end date and time of the charge period.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ChargePeriodStart",
@@ -232,7 +232,7 @@
         "status": "Mandatory",
         "description": "The start date and time of the charge period.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "CommitmentDiscountCategory",
@@ -243,7 +243,7 @@
         "status": "Conditional",
         "description": "The category of commitment discount applied. Allowed values: Spend, Usage.",
         "nullable": true,
-        "allowedValues": ["Spend", "Usage"],
+        "allowedValues": ["Spend", "Usage"]
       },
       {
         "name": "CommitmentDiscountId",
@@ -254,7 +254,7 @@
         "status": "Conditional",
         "description": "The identifier of the commitment discount applied.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "CommitmentDiscountName",
@@ -265,7 +265,7 @@
         "status": "Conditional",
         "description": "The name of the commitment discount applied.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "CommitmentDiscountQuantity",
@@ -276,7 +276,7 @@
         "status": "Conditional",
         "description": "The amount of a commitment discount purchased or accounted for in a given row.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "CommitmentDiscountStatus",
@@ -287,7 +287,7 @@
         "status": "Conditional",
         "description": "Indicates whether the charge corresponds to the used or unused portion of a commitment discount. Allowed values: Used, Unused.",
         "nullable": true,
-        "allowedValues": ["Used", "Unused"],
+        "allowedValues": ["Used", "Unused"]
       },
       {
         "name": "CommitmentDiscountType",
@@ -298,7 +298,7 @@
         "status": "Conditional",
         "description": "The type of commitment discount applied.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "CommitmentDiscountUnit",
@@ -309,7 +309,7 @@
         "status": "Conditional",
         "description": "The provider-specified measurement unit indicating how a provider measures the CommitmentDiscountQuantity.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ConsumedQuantity",
@@ -320,7 +320,7 @@
         "status": "Conditional",
         "description": "The quantity of a resource or service consumed.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ConsumedUnit",
@@ -331,7 +331,7 @@
         "status": "Conditional",
         "description": "The unit of measure for the consumed quantity.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractApplied",
@@ -342,7 +342,7 @@
         "status": "Conditional",
         "description": "A set of properties that associate a charge with one or more contract commitments.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractedCost",
@@ -353,7 +353,7 @@
         "status": "Mandatory",
         "description": "The cost calculated by multiplying contracted unit price by the pricing quantity.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractedUnitPrice",
@@ -364,7 +364,7 @@
         "status": "Conditional",
         "description": "The contracted unit price for the pricing unit.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "EffectiveCost",
@@ -375,7 +375,7 @@
         "status": "Mandatory",
         "description": "The amortized cost inclusive of the impact of commitment-based discounts.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "HostProviderName",
@@ -386,7 +386,7 @@
         "status": "Mandatory",
         "description": "The name of the provider hosting the resource or service.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "InvoiceId",
@@ -397,7 +397,7 @@
         "status": "Recommended",
         "description": "The identifier of the invoice associated with the charge.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "InvoiceIssuerName",
@@ -408,7 +408,7 @@
         "status": "Mandatory",
         "description": "The name of the entity responsible for invoicing the customer.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ListCost",
@@ -419,7 +419,7 @@
         "status": "Mandatory",
         "description": "The cost calculated by multiplying the list unit price by the pricing quantity.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ListUnitPrice",
@@ -430,7 +430,7 @@
         "status": "Conditional",
         "description": "The list unit price for the pricing unit, before any discounts.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "PricingCategory",
@@ -441,7 +441,7 @@
         "status": "Conditional",
         "description": "The pricing model used. Allowed values: Standard, Dynamic, Committed, Other.",
         "nullable": true,
-        "allowedValues": ["Standard", "Dynamic", "Committed", "Other"],
+        "allowedValues": ["Standard", "Dynamic", "Committed", "Other"]
       },
       {
         "name": "PricingCurrency",
@@ -452,7 +452,7 @@
         "status": "Conditional",
         "description": "The currency used for pricing prior to conversion to the billing currency.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "PricingCurrencyContractedUnitPrice",
@@ -463,7 +463,7 @@
         "status": "Conditional",
         "description": "The contracted unit price expressed in the pricing currency.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "PricingCurrencyEffectiveCost",
@@ -474,7 +474,7 @@
         "status": "Conditional",
         "description": "The effective cost expressed in the pricing currency.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "PricingCurrencyListUnitPrice",
@@ -485,7 +485,7 @@
         "status": "Conditional",
         "description": "The list unit price expressed in the pricing currency.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "PricingQuantity",
@@ -496,7 +496,7 @@
         "status": "Mandatory",
         "description": "The quantity used for pricing calculations.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "PricingUnit",
@@ -507,7 +507,7 @@
         "status": "Mandatory",
         "description": "Service-provider-specified measurement unit for determining unit prices.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ProviderName",
@@ -519,7 +519,7 @@
         "description": "The name of the entity that made the resources or services available for purchase. Deprecated in 1.3 — use ServiceProviderName instead.",
         "deprecated": true,
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "PublisherName",
@@ -531,7 +531,7 @@
         "description": "The name of the entity that produced the resources or services that were purchased. Deprecated in 1.3.",
         "deprecated": true,
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "RegionId",
@@ -542,7 +542,7 @@
         "status": "Conditional",
         "description": "The identifier of the geographic area where the resource is located.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "RegionName",
@@ -553,7 +553,7 @@
         "status": "Conditional",
         "description": "The name of the geographic area where the resource is located.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ResourceId",
@@ -564,7 +564,7 @@
         "status": "Conditional",
         "description": "The identifier of the resource.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ResourceName",
@@ -575,7 +575,7 @@
         "status": "Conditional",
         "description": "The name of the resource.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ResourceType",
@@ -586,7 +586,7 @@
         "status": "Conditional",
         "description": "The type or category of the resource.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ServiceCategory",
@@ -616,8 +616,8 @@
           "Security",
           "Storage",
           "Web",
-          "Other",
-        ],
+          "Other"
+        ]
       },
       {
         "name": "ServiceName",
@@ -628,7 +628,7 @@
         "status": "Mandatory",
         "description": "An offering that can be purchased from a provider.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ServiceProviderName",
@@ -639,7 +639,7 @@
         "status": "Mandatory",
         "description": "The name of the entity that made the resources or services available for purchase. Replaces deprecated ProviderName.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ServiceSubcategory",
@@ -650,7 +650,7 @@
         "status": "Recommended",
         "description": "A secondary classification of a service that provides additional detail within a ServiceCategory.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "SkuId",
@@ -661,7 +661,7 @@
         "status": "Conditional",
         "description": "The identifier of the cloud product in the provider's catalog.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "SkuMeter",
@@ -672,7 +672,7 @@
         "status": "Conditional",
         "description": "The name of the measurement type used to identify the unit of measure for a specific SKU resource.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "SkuPriceDetails",
@@ -683,7 +683,7 @@
         "status": "Conditional",
         "description": "A set of properties of a SKU Price ID which are meaningful and common to all instances of that SKU Price ID.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "SkuPriceId",
@@ -694,7 +694,7 @@
         "status": "Conditional",
         "description": "The identifier for the price of a given SKU.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "SubAccountId",
@@ -705,7 +705,7 @@
         "status": "Conditional",
         "description": "An ID assigned to a grouping of resources or services, often used to manage access and/or cost.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "SubAccountName",
@@ -716,7 +716,7 @@
         "status": "Conditional",
         "description": "The name of the sub-account or project responsible for the costs.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "SubAccountType",
@@ -727,7 +727,7 @@
         "status": "Conditional",
         "description": "The type of the sub-account or project responsible for the costs.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "Tags",
@@ -738,9 +738,9 @@
         "status": "Conditional",
         "description": "The set of tags assigned to tag sources that account for potential provider-defined or user-defined tag evaluations.",
         "nullable": true,
-        "allowedValues": null,
-      },
-    ],
+        "allowedValues": null
+      }
+    ]
   },
   "contractCommitment": {
     "columns": [
@@ -753,7 +753,7 @@
         "status": "Mandatory",
         "description": "The currency used for the billing of the contract commitment.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractCommitmentCategory",
@@ -764,7 +764,7 @@
         "status": "Mandatory",
         "description": "The category of the contract commitment. Allowed values: Spend, Usage.",
         "nullable": false,
-        "allowedValues": ["Spend", "Usage"],
+        "allowedValues": ["Spend", "Usage"]
       },
       {
         "name": "ContractCommitmentCost",
@@ -775,7 +775,7 @@
         "status": "Mandatory",
         "description": "The cost associated with the contract commitment.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractCommitmentDescription",
@@ -786,7 +786,7 @@
         "status": "Mandatory",
         "description": "A description of the contract commitment.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractCommitmentId",
@@ -797,7 +797,7 @@
         "status": "Mandatory",
         "description": "The identifier of the contract commitment.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractCommitmentPeriodEnd",
@@ -808,7 +808,7 @@
         "status": "Mandatory",
         "description": "The end date and time of the contract commitment period.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractCommitmentPeriodStart",
@@ -819,7 +819,7 @@
         "status": "Mandatory",
         "description": "The start date and time of the contract commitment period.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractCommitmentQuantity",
@@ -830,7 +830,7 @@
         "status": "Mandatory",
         "description": "The quantity associated with the contract commitment.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractCommitmentType",
@@ -841,7 +841,7 @@
         "status": "Mandatory",
         "description": "The type of the contract commitment.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractCommitmentUnit",
@@ -852,7 +852,7 @@
         "status": "Mandatory",
         "description": "The unit of measure for the contract commitment quantity.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractId",
@@ -863,7 +863,7 @@
         "status": "Mandatory",
         "description": "The identifier of the contract associated with the commitment.",
         "nullable": true,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractPeriodEnd",
@@ -874,7 +874,7 @@
         "status": "Mandatory",
         "description": "The end date and time of the contract period.",
         "nullable": false,
-        "allowedValues": null,
+        "allowedValues": null
       },
       {
         "name": "ContractPeriodStart",
@@ -885,8 +885,8 @@
         "status": "Mandatory",
         "description": "The start date and time of the contract period.",
         "nullable": false,
-        "allowedValues": null,
-      },
-    ],
-  },
+        "allowedValues": null
+      }
+    ]
+  }
 }

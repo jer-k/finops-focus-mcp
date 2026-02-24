@@ -2,7 +2,7 @@
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { SchemaAST } from "effect";
+import type { SchemaAST } from "effect";
 
 // Column data
 import { columns as v10Columns } from "../src/focus/v1-0/columns";
@@ -101,7 +101,10 @@ function buildFieldInfoMap(
   // In Effect v4 beta, Schema.Struct produces an AST with _tag "Objects"
   if ((schemaAst as TaggedAST)._tag !== "Objects") return map;
   const typeLiteral = schemaAst as SchemaAST.AST & {
-    propertySignatures: ReadonlyArray<{ name: PropertyKey; type: SchemaAST.AST }>;
+    propertySignatures: ReadonlyArray<{
+      name: PropertyKey;
+      type: SchemaAST.AST;
+    }>;
   };
   for (const prop of typeLiteral.propertySignatures) {
     map.set(String(prop.name), analyzeField(prop.type));

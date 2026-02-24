@@ -5,9 +5,9 @@
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "format": "oxfmt --write .",
+    "format": "biome format --write .",
     "generate": "tsx scripts/generate-focus-docs.ts",
-    "lint:fix": "oxlint --fix",
+    "lint:fix": "biome lint --write .",
     "start": "wrangler dev",
     "cf-typegen": "wrangler types",
     "test": "vitest run",
@@ -19,9 +19,8 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.4",
     "@types/node": "^25.3.0",
-    "oxfmt": "^0.34.0",
-    "oxlint": "^1.49.0",
     "tsx": "^4.19.4",
     "typescript": "5.9.3",
     "vitest": "^3.2.4",

@@ -45,7 +45,11 @@ const albUsageRow = {
   SkuPriceId: "2ETY8Y426S4237JU.JRTCKXETXF.6YS6EN2CT7",
   SubAccountId: "43883916739",
   SubAccountName: "Zenith Eclipse",
-  Tags: { application: "BrightLensMatrix", environment: "dev", business_unit: "ViennaAI" },
+  Tags: {
+    application: "BrightLensMatrix",
+    environment: "dev",
+    business_unit: "ViennaAI",
+  },
 };
 
 const dataTransferRow = {
@@ -84,7 +88,11 @@ const dataTransferRow = {
   SkuPriceId: "9DEJHBACUYEYMVN8.JRTCKXETXF.6YS6EN2CT7",
   SubAccountId: "66362635077",
   SubAccountName: "Zenith Apollo",
-  Tags: { application: "BrightSourceCore", environment: "dev", business_unit: "MarseilleSRE" },
+  Tags: {
+    application: "BrightSourceCore",
+    environment: "dev",
+    business_unit: "MarseilleSRE",
+  },
 };
 
 describe("CostAndUsageRow v1.1", () => {

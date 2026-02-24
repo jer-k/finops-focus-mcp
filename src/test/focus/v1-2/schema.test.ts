@@ -82,7 +82,11 @@ const albUsageRow = {
     "arn:ats:emastilmoalfamanling:us-test-2:586597448978:moalfamanler/app/tungsten-lonbmuenle-amf/l365455f461l4e4a",
   SkuId: "2ETY8Y426S4237JU",
   SkuPriceId: "2ETY8Y426S4237JU.JRTCKXETXF.6YS6EN2CT7",
-  Tags: { application: "BrightLensMatrix", environment: "dev", business_unit: "ViennaAI" },
+  Tags: {
+    application: "BrightLensMatrix",
+    environment: "dev",
+    business_unit: "ViennaAI",
+  },
   // Conditional (optional)
   ConsumedQuantity: 0.00200749,
   ConsumedUnit: "LCU-Hours",

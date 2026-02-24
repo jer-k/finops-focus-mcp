@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 import { registerV10Resource } from "./v1-0";
 import { registerV11Resource } from "./v1-1";

@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 import v13Jsonc from "../focus/v1-3/columns.jsonc";
 import v13Md from "../focus/v1-3/columns.md";
@@ -11,7 +11,13 @@ export function registerV13Resources(server: McpServer) {
     "focus://schema/v1.3/json",
     { mimeType: "application/json" },
     async (uri) => ({
-      contents: [{ uri: uri.href, mimeType: "application/json", text: stripComment(v13Jsonc) }],
+      contents: [
+        {
+          uri: uri.href,
+          mimeType: "application/json",
+          text: stripComment(v13Jsonc),
+        },
+      ],
     }),
   );
 

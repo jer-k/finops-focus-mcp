@@ -91,7 +91,11 @@ const albUsageRow = {
   SkuPriceId: "2ETY8Y426S4237JU.JRTCKXETXF.6YS6EN2CT7",
   SubAccountId: "43883916739",
   SubAccountName: "Zenith Eclipse",
-  Tags: { application: "BrightLensMatrix", environment: "dev", business_unit: "ViennaAI" },
+  Tags: {
+    application: "BrightLensMatrix",
+    environment: "dev",
+    business_unit: "ViennaAI",
+  },
   // Deprecated (still accepted by schema)
   ProviderName: "AWS",
   PublisherName: "Amazon Web Services, Inc.",
