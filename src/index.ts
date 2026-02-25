@@ -2,6 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { McpAgent } from "agents/mcp";
 
 import { registerResources } from "./resources";
+import { registerTools } from "./tools";
 
 export class FinopsFocusMcpAgent extends McpAgent {
   server = new McpServer({
@@ -11,6 +12,7 @@ export class FinopsFocusMcpAgent extends McpAgent {
 
   async init() {
     registerResources(this.server);
+    registerTools(this.server, this.ctx.storage.sql);
   }
 }
 
