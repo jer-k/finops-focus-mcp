@@ -36,6 +36,31 @@ src/focus/
 - Tags / KeyValue columns use `Schema.Record(Schema.String, Schema.String)`
 - JSON columns use `Schema.Unknown` or a typed nested `Schema.Struct`
 
+## Storage (Effect SQL)
+
+SQLite tables are managed via Effect SQL using the `@effect/sql-sqlite-do` package. Source lives under `src/storage/`:
+
+```
+src/storage/
+├── models.ts      # Model.Class definitions — one per table
+├── migrations.ts  # DDL migrations via Migrator.fromRecord
+├── programs.ts    # createFocusTables Effect (runs migrations)
+└── index.ts       # re-exports
+```
+
+### Models
+
+| Model | Table | Description |
+|---|---|---|
+| `FocusDataset` | `focus_datasets` | Upload metadata — name, version, type, row count, timestamp |
+| `FocusRowV10` | `focus_rows_v10` | v1.0 cost and usage rows |
+| `FocusRowV11` | `focus_rows_v11` | v1.1 cost and usage rows |
+| `FocusRowV12` | `focus_rows_v12` | v1.2 cost and usage rows |
+| `FocusRowV13` | `focus_rows_v13` | v1.3 cost and usage rows |
+| `FocusRowV13ContractCommitment` | `focus_rows_v13_contract_commitment` | v1.3 contract commitment rows |
+
+Each row model has `id: Model.Generated(Schema.Number)` and `datasetId: Schema.String` (FK to `focus_datasets.id`), then spreads the corresponding FOCUS schema's `.fields`.
+
 ## Tests
 
 Tests live under `src/test/`, mirroring the source structure:
