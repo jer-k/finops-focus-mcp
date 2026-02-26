@@ -1,25 +1,24 @@
 #!/usr/bin/env tsx
 import { writeFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import type { SchemaAST } from "effect";
 
 // Column data
 import { columns as v10Columns } from "../src/focus/v1-0/columns";
-import { columns as v11Columns } from "../src/focus/v1-1/columns";
-import { columns as v12Columns } from "../src/focus/v1-2/columns";
-import {
-  costAndUsageColumns as v13CostAndUsageColumns,
-  contractCommitmentColumns as v13ContractCommitmentColumns,
-} from "../src/focus/v1-3/columns";
-
 // Schema ASTs (for nullable + allowedValues introspection)
 import { CostAndUsageRow as v10Row } from "../src/focus/v1-0/schema";
+import { columns as v11Columns } from "../src/focus/v1-1/columns";
 import { CostAndUsageRow as v11Row } from "../src/focus/v1-1/schema";
+import { columns as v12Columns } from "../src/focus/v1-2/columns";
 import { CostAndUsageRow as v12Row } from "../src/focus/v1-2/schema";
 import {
-  CostAndUsageRow as v13CostAndUsageRow,
+  contractCommitmentColumns as v13ContractCommitmentColumns,
+  costAndUsageColumns as v13CostAndUsageColumns,
+} from "../src/focus/v1-3/columns";
+import {
   ContractCommitmentRow as v13ContractCommitmentRow,
+  CostAndUsageRow as v13CostAndUsageRow,
 } from "../src/focus/v1-3/schema";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -147,7 +146,7 @@ const TABLE_DIVIDER =
 
 function buildMarkdownTable(columns: EnrichedColumn[]): string {
   const rows = columns.map((col) => {
-    const nameCell = `\`${col.name}\`` + (col.deprecated ? " *(deprecated)*" : "");
+    const nameCell = `\`${col.name}\`${col.deprecated ? " *(deprecated)*" : ""}`;
     const allowedValues = col.allowedValues != null ? col.allowedValues.join(", ") : "—";
     const description = col.description.replace(/\|/g, "\\|");
     return `| ${nameCell} | ${col.displayName} | ${col.category} | ${col.dataType} | ${col.introducedVersion} | ${col.status} | ${col.nullable ? "Yes" : "No"} | ${allowedValues} | ${description} |`;
@@ -186,7 +185,7 @@ function buildMarkdownV13(costAndUsage: EnrichedColumn[], contractCommitment: En
 // ---------------------------------------------------------------------------
 
 function writeFiles(dir: string, json: object, markdown: string): void {
-  const jsonBody = JSON.stringify(json, null, 2) + "\n";
+  const jsonBody = `${JSON.stringify(json, null, 2)}\n`;
   writeFileSync(join(dir, "columns.jsonc"), `// ${GENERATED_COMMENT}\n${jsonBody}`);
   writeFileSync(join(dir, "columns.md"), markdown);
 }
