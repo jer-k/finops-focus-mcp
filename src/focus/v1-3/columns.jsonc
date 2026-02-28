@@ -181,10 +181,7 @@
         "status": "Conditional",
         "description": "Indicates whether a charge represents consumption or the unused portion of a capacity reservation.",
         "nullable": true,
-        "allowedValues": [
-          "Used",
-          "Unused"
-        ]
+        "allowedValues": ["Used", "Unused"]
       },
       {
         "name": "ChargeCategory",
@@ -196,13 +193,7 @@
         "status": "Mandatory",
         "description": "The category of the charge. Allowed values: Usage, Purchase, Tax, Credit, Adjustment.",
         "nullable": false,
-        "allowedValues": [
-          "Usage",
-          "Purchase",
-          "Tax",
-          "Credit",
-          "Adjustment"
-        ]
+        "allowedValues": ["Usage", "Purchase", "Tax", "Credit", "Adjustment"]
       },
       {
         "name": "ChargeClass",
@@ -214,9 +205,7 @@
         "status": "Mandatory",
         "description": "Indicates whether the row represents a correction to a previously invoiced billing period.",
         "nullable": true,
-        "allowedValues": [
-          "Correction"
-        ]
+        "allowedValues": ["Correction"]
       },
       {
         "name": "ChargeDescription",
@@ -240,11 +229,7 @@
         "status": "Recommended",
         "description": "The frequency of the charge. Allowed values: One-Time, Recurring, Usage-Based.",
         "nullable": false,
-        "allowedValues": [
-          "One-Time",
-          "Recurring",
-          "Usage-Based"
-        ]
+        "allowedValues": ["One-Time", "Recurring", "Usage-Based"]
       },
       {
         "name": "ChargePeriodEnd",
@@ -280,10 +265,7 @@
         "status": "Conditional",
         "description": "The category of commitment discount applied. Allowed values: Spend, Usage.",
         "nullable": true,
-        "allowedValues": [
-          "Spend",
-          "Usage"
-        ]
+        "allowedValues": ["Spend", "Usage"]
       },
       {
         "name": "CommitmentDiscountId",
@@ -331,10 +313,7 @@
         "status": "Conditional",
         "description": "Indicates whether the charge corresponds with the consumption of a commitment discount or the unused portion of the committed amount. Allowed values: Used, Unused.",
         "nullable": true,
-        "allowedValues": [
-          "Used",
-          "Unused"
-        ]
+        "allowedValues": ["Used", "Unused"]
       },
       {
         "name": "CommitmentDiscountType",
@@ -502,12 +481,7 @@
         "status": "Conditional",
         "description": "The pricing model used. Allowed values: Standard, Dynamic, Committed, Other.",
         "nullable": true,
-        "allowedValues": [
-          "Standard",
-          "Dynamic",
-          "Committed",
-          "Other"
-        ]
+        "allowedValues": ["Standard", "Dynamic", "Committed", "Other"]
       },
       {
         "name": "PricingCurrency",
@@ -857,10 +831,7 @@
         "status": "Mandatory",
         "description": "The category of the contract commitment. Allowed values: Spend, Usage.",
         "nullable": false,
-        "allowedValues": [
-          "Spend",
-          "Usage"
-        ]
+        "allowedValues": ["Spend", "Usage"]
       },
       {
         "name": "ContractCommitmentCost",
