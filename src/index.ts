@@ -5,10 +5,16 @@ import { registerResources } from "./resources";
 import { registerTools } from "./tools";
 
 export class FinopsFocusMcpAgent extends McpAgent {
-  server = new McpServer({
-    name: "FinOps FOCUS MCP",
-    version: "0.1.0",
-  });
+  server = new McpServer(
+    {
+      name: "FinOps FOCUS MCP",
+      version: "0.1.0",
+    },
+    {
+      instructions:
+        "A server for querying FinOps FOCUS cost and usage data. Start by loading data with upload_focus_data, then use execute_focus_sql for custom queries or execute_focus_query for predefined ones.",
+    }
+  );
 
   async init() {
     registerResources(this.server);
