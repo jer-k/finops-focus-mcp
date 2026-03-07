@@ -1,10 +1,9 @@
-import * as Effect from "effect/Effect";
-import { Cause, Exit, Layer } from "effect";
+import { Cause, Effect, Exit, Layer } from "effect";
 import { SqlClient } from "effect/unstable/sql/SqlClient";
 import { describe, expect, it } from "vitest";
 
-import { executeArbitrarySql } from "../../tools/execute-focus-sql";
-import { InvalidSqlError } from "../../tools/types";
+import { executeRawSql } from "../../queries/execute-raw-sql";
+import { InvalidSqlError } from "../../queries/types";
 
 function createMockSqlLayer(capturedSqls: string[]) {
   const mockUnsafe = (sql: string, _params?: ReadonlyArray<unknown>) => {
@@ -15,13 +14,11 @@ function createMockSqlLayer(capturedSqls: string[]) {
   return Layer.succeed(SqlClient)(mockClient);
 }
 
-describe("executeArbitrarySql", () => {
+describe("executeRawSql", () => {
   it("rejects non-SELECT SQL before hitting the database", () => {
     const capturedSqls: string[] = [];
     const exit = Effect.runSyncExit(
-      executeArbitrarySql("1.0", "DELETE FROM focus_data_table", []).pipe(
-        Effect.provide(createMockSqlLayer(capturedSqls))
-      )
+      executeRawSql("1.0", "DELETE FROM focus_data_table", []).pipe(Effect.provide(createMockSqlLayer(capturedSqls)))
     );
     expect(Exit.isFailure(exit)).toBe(true);
     if (Exit.isFailure(exit)) {
@@ -36,7 +33,7 @@ describe("executeArbitrarySql", () => {
   it("accepts a valid SELECT and substitutes the table name", () => {
     const capturedSqls: string[] = [];
     const exit = Effect.runSyncExit(
-      executeArbitrarySql("1.0", "SELECT * FROM focus_data_table WHERE BilledCost > 0", []).pipe(
+      executeRawSql("1.0", "SELECT * FROM focus_data_table WHERE BilledCost > 0", []).pipe(
         Effect.provide(createMockSqlLayer(capturedSqls))
       )
     );

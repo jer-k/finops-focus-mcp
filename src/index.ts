@@ -18,7 +18,7 @@ export class FinopsFocusMcpAgent extends McpAgent {
 
   async init() {
     registerResources(this.server);
-    registerTools(this.server, this.ctx.storage.sql);
+    registerTools(this.server, this.ctx.storage.sql, this.env);
   }
 }
 

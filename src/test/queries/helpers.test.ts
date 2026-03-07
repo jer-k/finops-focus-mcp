@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { isSelectStatement, replaceTableName } from "../../tools/helpers";
+import { isSelectStatement, replaceTableName } from "../../queries/helpers";
 
 describe("replaceTableName", () => {
   it("replaces focus_data_table with focus_rows_v10 for version 1.0", () => {

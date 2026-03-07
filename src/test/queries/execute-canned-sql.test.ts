@@ -2,8 +2,8 @@ import { Cause, Effect, Exit } from "effect";
 import { describe, expect, it } from "vitest";
 
 import type { FocusQuery } from "../../queries/types";
-import { buildPositionalParams, findQuery } from "../../tools/execute-focus-query";
-import { MissingParamError, QueryNotFoundError } from "../../tools/types";
+import { buildPositionalParams, findQuery } from "../../queries/execute-canned-sql";
+import { MissingParamError, QueryNotFoundError } from "../../queries/types";
 
 // A minimal two-param query for testing buildPositionalParams
 const twoParamQuery: FocusQuery = {

@@ -6,7 +6,7 @@ import { columns as v10Columns } from "../focus/v1-0/columns";
 import { columns as v11Columns } from "../focus/v1-1/columns";
 import { columns as v12Columns } from "../focus/v1-2/columns";
 import { contractCommitmentColumns, costAndUsageColumns } from "../focus/v1-3/columns";
-import type { FocusVersion } from "./types";
+import type { FocusVersion } from "../queries/types";
 
 const schema = z.object({
   version: z.enum(["1.0", "1.1", "1.2", "1.3"]).describe("FOCUS spec version to list columns for"),
