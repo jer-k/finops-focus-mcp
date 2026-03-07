@@ -14,10 +14,13 @@ Supported spec versions: **v1.0, v1.1, v1.2, v1.3**
 
 | Tool | Description |
 |---|---|
+| `create_focus_dataset` | Create a named dataset record for a FOCUS version and type — returns a `datasetId` for subsequent inserts |
+| `insert_focus_rows` | Insert FOCUS rows into a dataset with schema validation — fail-fast if any row is invalid |
+| `list_focus_datasets` | List all loaded datasets with row counts, versions, and types |
 | `execute_focus_query` | Run a named FOCUS use-case query by ID against your uploaded dataset |
 | `execute_focus_sql` | Execute arbitrary `SELECT` SQL against your dataset using `focus_data_table` as the table name |
 | `search_focus_queries` | Discover available FOCUS use-case queries for a given spec version |
-| `list-focus-columns` | List and filter FOCUS spec column definitions with metadata |
+| `list_focus_columns` | List and filter FOCUS spec column definitions with metadata |
 
 ### Resources
 
@@ -177,17 +180,21 @@ src/
 │   ├── models.ts
 │   ├── migrations.ts
 │   ├── programs.ts
+│   ├── errors.ts         # Domain error types for upload operations
+│   ├── insert-rows.ts    # Effect programs: createDataset, insertRows, listDatasets
 │   └── index.ts
 ├── tools/                # MCP tool registrations
 │   ├── index.ts
-│   ├── execute-focus-query.ts
-│   ├── execute-focus-sql.ts
+│   ├── create-focus-dataset.ts
+│   ├── insert-focus-rows.ts
+│   ├── list-focus-datasets.ts
 │   ├── search-focus-queries.ts
 │   ├── list-focus-columns.ts
-│   ├── helpers.ts
-│   └── types.ts
+│   └── codemode/         # execute_focus_query (codemode executor)
 └── test/                 # Tests mirroring src structure
     ├── focus/
+    ├── storage/
+    ├── queries/
     └── tools/
 ```
 

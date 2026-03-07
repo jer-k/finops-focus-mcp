@@ -96,13 +96,7 @@
       "status": "Mandatory",
       "description": "The category of the charge (e.g., Usage, Purchase, Tax, Credit, Adjustment).",
       "nullable": false,
-      "allowedValues": [
-        "Usage",
-        "Purchase",
-        "Tax",
-        "Credit",
-        "Adjustment"
-      ]
+      "allowedValues": ["Usage", "Purchase", "Tax", "Credit", "Adjustment"]
     },
     {
       "name": "ChargeClass",
@@ -114,9 +108,7 @@
       "status": "Mandatory",
       "description": "Null for regular charges; \"Correction\" when the row corrects a prior-period charge.",
       "nullable": true,
-      "allowedValues": [
-        "Correction"
-      ]
+      "allowedValues": ["Correction"]
     },
     {
       "name": "ChargeDescription",
@@ -140,11 +132,7 @@
       "status": "Recommended",
       "description": "The frequency of the charge (e.g., One-Time, Recurring, Usage-Based).",
       "nullable": false,
-      "allowedValues": [
-        "One-Time",
-        "Recurring",
-        "Usage-Based"
-      ]
+      "allowedValues": ["One-Time", "Recurring", "Usage-Based"]
     },
     {
       "name": "ChargePeriodEnd",
@@ -180,10 +168,7 @@
       "status": "Conditional",
       "description": "The category of commitment discount applied (e.g., Spend, Usage).",
       "nullable": true,
-      "allowedValues": [
-        "Spend",
-        "Usage"
-      ]
+      "allowedValues": ["Spend", "Usage"]
     },
     {
       "name": "CommitmentDiscountId",
@@ -219,10 +204,7 @@
       "status": "Conditional",
       "description": "The status of the commitment discount (e.g., Used, Unused).",
       "nullable": true,
-      "allowedValues": [
-        "Used",
-        "Unused"
-      ]
+      "allowedValues": ["Used", "Unused"]
     },
     {
       "name": "CommitmentDiscountType",
@@ -342,12 +324,7 @@
       "status": "Conditional",
       "description": "The pricing model used (e.g., Standard, Dynamic, Committed).",
       "nullable": true,
-      "allowedValues": [
-        "Standard",
-        "Dynamic",
-        "Committed",
-        "Other"
-      ]
+      "allowedValues": ["Standard", "Dynamic", "Committed", "Other"]
     },
     {
       "name": "PricingQuantity",
