@@ -74,7 +74,37 @@ The MCP server will be available at `http://localhost:8787/mcp`.
 
 ### Connect to an MCP client
 
-Point your MCP client at the `/mcp` endpoint. For example, to add it to [Claude Desktop](https://claude.ai/download), add an entry to your `claude_desktop_config.json`:
+The MCP server uses HTTP transport at the `/mcp` endpoint. Replace `http://localhost:8787` with your deployed worker URL when connecting to a production instance.
+
+#### Claude Code
+
+Add the server using the CLI:
+
+```sh
+claude mcp add --transport http finops-focus http://localhost:8787/mcp
+```
+
+Or add it manually to your project's `.claude/settings.json` (or `~/.claude/settings.json` for global access):
+
+```json
+{
+  "mcpServers": {
+    "finops-focus": {
+      "type": "http",
+      "url": "http://localhost:8787/mcp"
+    }
+  }
+}
+```
+
+Verify it's connected with `/mcp` in the Claude Code chat.
+
+#### Claude Desktop
+
+Add an entry to your `claude_desktop_config.json`:
+
+- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
 ```json
 {
@@ -86,7 +116,21 @@ Point your MCP client at the `/mcp` endpoint. For example, to add it to [Claude 
 }
 ```
 
-For a deployed worker, replace `http://localhost:8787` with your worker's URL.
+Restart Claude Desktop after saving. The FOCUS tools will appear in the tool picker.
+
+#### Cursor
+
+Add an entry to your project's `.cursor/mcp.json` (or `~/.cursor/mcp.json` for global access):
+
+```json
+{
+  "mcpServers": {
+    "finops-focus": {
+      "url": "http://localhost:8787/mcp"
+    }
+  }
+}
+```
 
 ### Deploy to Cloudflare
 
