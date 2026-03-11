@@ -21,7 +21,7 @@ const schema = z.object({
 
 export function registerInsertFocusRowsTool(server: McpServer, db: SqlStorage) {
   server.registerTool(
-    "insert_focus_rows",
+    "insert-focus-rows",
     {
       description:
         "Insert FOCUS rows into an existing dataset. All rows are validated against the FOCUS schema before any are written — if any row fails validation, the entire batch is rejected with the row index and error details. Can be called multiple times for the same dataset to load data in chunks.",

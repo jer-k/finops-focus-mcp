@@ -17,10 +17,10 @@ const schema = z.object({
 
 export function registerCreateFocusDatasetTool(server: McpServer, db: SqlStorage) {
   server.registerTool(
-    "create_focus_dataset",
+    "create-focus-dataset",
     {
       description:
-        "Create a new FOCUS dataset record. Returns the dataset ID to use with insert_focus_rows. Call this once per upload, then call insert_focus_rows one or more times to load rows.",
+        "Create a new FOCUS dataset record. Returns the dataset ID to use with insert-focus-rows. Call this once per upload, then call insert-focus-rows one or more times to load rows.",
       inputSchema: schema.shape,
     },
     async ({ name, focusVersion, datasetType }) => {

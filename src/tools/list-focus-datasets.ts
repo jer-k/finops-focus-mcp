@@ -20,10 +20,10 @@ const schema = z.object({
 
 export function registerListFocusDatasetsTool(server: McpServer, db: SqlStorage) {
   server.registerTool(
-    "list_focus_datasets",
+    "list-focus-datasets",
     {
       description:
-        "List all FOCUS datasets that have been loaded. Returns dataset IDs, names, versions, types, row counts, and creation timestamps. Use the returned dataset IDs with insert_focus_rows.",
+        "List all FOCUS datasets that have been loaded. Returns dataset IDs, names, versions, types, row counts, and creation timestamps. Use the returned dataset IDs with insert-focus-rows.",
       inputSchema: schema.shape,
     },
     async ({ focusVersion, datasetType }) => {

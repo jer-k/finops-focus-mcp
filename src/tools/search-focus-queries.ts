@@ -27,10 +27,10 @@ export function searchFocusQueries(version: FocusVersion, search?: string): Focu
 
 export function registerSearchFocusQueriesTool(server: McpServer) {
   server.registerTool(
-    "search_focus_queries",
+    "search-focus-queries",
     {
       description:
-        "Search and discover available FOCUS use-case queries for a given spec version. Returns query IDs, names, SQL, and parameters. Use the returned query IDs with execute_focus_query.",
+        "Search and discover available FOCUS use-case queries for a given spec version. Returns query IDs, names, SQL, and parameters. Use the returned query IDs with execute-focus-query.",
       inputSchema: schema.shape,
     },
     async ({ version, search }) => {

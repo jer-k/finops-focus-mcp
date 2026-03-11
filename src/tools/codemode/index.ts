@@ -48,7 +48,7 @@ export function registerExecuteFocusCodemodeTool(server: McpServer, db: SqlStora
   };
 
   server.registerTool(
-    "execute_focus_query",
+    "execute-focus-query",
     {
       description: TOOL_DESCRIPTION,
       inputSchema: { code: z.string().describe("JavaScript async arrow function to execute") },

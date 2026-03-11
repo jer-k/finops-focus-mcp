@@ -70,13 +70,13 @@ Tools are registered in `src/tools/` and exposed via the MCP server.
 ```
 src/tools/
 ├── index.ts                        # registerTools — calls all register* functions
-├── create-focus-dataset.ts         # create_focus_dataset tool
-├── insert-focus-rows.ts            # insert_focus_rows tool
-├── list-focus-datasets.ts          # list_focus_datasets tool
-├── list-focus-columns.ts           # list_focus_columns tool
-├── search-focus-queries.ts         # search_focus_queries tool
+├── create-focus-dataset.ts         # create-focus-dataset tool
+├── insert-focus-rows.ts            # insert-focus-rows tool
+├── list-focus-datasets.ts          # list-focus-datasets tool
+├── list-focus-columns.ts           # list-focus-columns tool
+├── search-focus-queries.ts         # search-focus-queries tool
 └── codemode/
-    ├── index.ts                    # registerExecuteFocusCodemodeTool — execute_focus_query tool
+    ├── index.ts                    # registerExecuteFocusCodemodeTool — execute-focus-query tool
     ├── execute-focus-query.ts      # codemode sub-fn: execute_canned_sql descriptor + createFn
     └── execute-focus-sql.ts        # codemode sub-fn: execute_raw_sql descriptor + createFn
 ```
@@ -85,12 +85,12 @@ src/tools/
 
 | Tool name | File | Description |
 |---|---|---|
-| `create_focus_dataset` | `create-focus-dataset.ts` | Create a dataset metadata record. Takes `name`, `focusVersion`, and `datasetType`. Returns a `datasetId` for use with `insert_focus_rows`. `contract_commitment` type is only valid for v1.3. |
-| `insert_focus_rows` | `insert-focus-rows.ts` | Insert FOCUS rows into an existing dataset. Validates all rows against the FOCUS schema before writing any — fail-fast on the first invalid row (returns `rowIndex` + reason). Updates `rowCount` on success. Can be called multiple times for the same dataset. |
-| `list_focus_datasets` | `list-focus-datasets.ts` | List all loaded datasets. Returns `id`, `name`, `focusVersion`, `datasetType`, `rowCount`, `createdAt`. Supports optional `focusVersion` and `datasetType` filters. |
-| `list_focus_columns` | `list-focus-columns.ts` | List and filter FOCUS spec columns for a version. Supports `featureLevel`, `columnType`, and `search` filters. v1.3 results include a `dataset` field (`Cost and Usage` / `Contract Commitment`). |
-| `search_focus_queries` | `search-focus-queries.ts` | Search available canned FOCUS queries for a version. Returns query IDs, names, SQL, and parameters. Optional `search` substring filter on id/name. |
-| `execute_focus_query` | `codemode/index.ts` | Execute a JavaScript async arrow function (via `@cloudflare/codemode` `DynamicWorkerExecutor`). The function can call `codemode.execute_raw_sql` and `codemode.execute_canned_sql` to run multi-step queries with logic between them. |
+| `create-focus-dataset` | `create-focus-dataset.ts` | Create a dataset metadata record. Takes `name`, `focusVersion`, and `datasetType`. Returns a `datasetId` for use with `insert-focus-rows`. `contract_commitment` type is only valid for v1.3. |
+| `insert-focus-rows` | `insert-focus-rows.ts` | Insert FOCUS rows into an existing dataset. Validates all rows against the FOCUS schema before writing any — fail-fast on the first invalid row (returns `rowIndex` + reason). Updates `rowCount` on success. Can be called multiple times for the same dataset. |
+| `list-focus-datasets` | `list-focus-datasets.ts` | List all loaded datasets. Returns `id`, `name`, `focusVersion`, `datasetType`, `rowCount`, `createdAt`. Supports optional `focusVersion` and `datasetType` filters. |
+| `list-focus-columns` | `list-focus-columns.ts` | List and filter FOCUS spec columns for a version. Supports `featureLevel`, `columnType`, and `search` filters. v1.3 results include a `dataset` field (`Cost and Usage` / `Contract Commitment`). |
+| `search-focus-queries` | `search-focus-queries.ts` | Search available canned FOCUS queries for a version. Returns query IDs, names, SQL, and parameters. Optional `search` substring filter on id/name. |
+| `execute-focus-query` | `codemode/index.ts` | Execute a JavaScript async arrow function (via `@cloudflare/codemode` `DynamicWorkerExecutor`). The function can call `codemode.execute_raw_sql` and `codemode.execute_canned_sql` to run multi-step queries with logic between them. |
 
 ### Codemode sub-functions
 
@@ -116,12 +116,12 @@ export function registerTools(server: McpServer, db: SqlStorage, env: { LOADER: 
 
 ### Data upload flow
 
-1. Call `create_focus_dataset` → returns `{ id, name, focusVersion, datasetType, rowCount, createdAt }`
-2. Call `insert_focus_rows` with the `datasetId` and an array of row objects → returns `{ inserted: N }`
+1. Call `create-focus-dataset` → returns `{ id, name, focusVersion, datasetType, rowCount, createdAt }`
+2. Call `insert-focus-rows` with the `datasetId` and an array of row objects → returns `{ inserted: N }`
    - Rows are validated against the FOCUS Effect schema for the version and type before any writes
    - JSON fields (`Tags`, `AllocatedMethodDetails`, etc.) are serialized automatically
 3. Repeat step 2 to load additional chunks
-4. Query data with `execute_focus_query` or `execute_focus_sql`
+4. Query data with `execute-focus-query` or `execute_focus_sql`
 
 ### Storage notes (insert path)
 
