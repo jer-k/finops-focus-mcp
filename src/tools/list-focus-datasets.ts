@@ -19,10 +19,13 @@ const schema = z.object({
 });
 
 export function registerListFocusDatasetsTool(server: McpServer, db: SqlStorage) {
-  server.tool(
+  server.registerTool(
     "list_focus_datasets",
-    "List all FOCUS datasets that have been loaded. Returns dataset IDs, names, versions, types, row counts, and creation timestamps. Use the returned dataset IDs with insert_focus_rows.",
-    schema.shape,
+    {
+      description:
+        "List all FOCUS datasets that have been loaded. Returns dataset IDs, names, versions, types, row counts, and creation timestamps. Use the returned dataset IDs with insert_focus_rows.",
+      inputSchema: schema.shape,
+    },
     async ({ focusVersion, datasetType }) => {
       const datasets = await Effect.runPromise(
         listDatasets(focusVersion as FocusVersion | undefined, datasetType as DatasetType | undefined).pipe(

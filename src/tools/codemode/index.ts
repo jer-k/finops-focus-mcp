@@ -47,10 +47,12 @@ export function registerExecuteFocusCodemodeTool(server: McpServer, db: SqlStora
     execute_canned_sql: executeFocusQuery.createFn(db),
   };
 
-  server.tool(
+  server.registerTool(
     "execute_focus_query",
-    TOOL_DESCRIPTION,
-    { code: z.string().describe("JavaScript async arrow function to execute") },
+    {
+      description: TOOL_DESCRIPTION,
+      inputSchema: { code: z.string().describe("JavaScript async arrow function to execute") },
+    },
     async ({ code }) => {
       const executor = new DynamicWorkerExecutor({ loader: env.LOADER });
       const executeResult = await executor.execute(

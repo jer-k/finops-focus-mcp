@@ -16,10 +16,13 @@ const schema = z.object({
 });
 
 export function registerCreateFocusDatasetTool(server: McpServer, db: SqlStorage) {
-  server.tool(
+  server.registerTool(
     "create_focus_dataset",
-    "Create a new FOCUS dataset record. Returns the dataset ID to use with insert_focus_rows. Call this once per upload, then call insert_focus_rows one or more times to load rows.",
-    schema.shape,
+    {
+      description:
+        "Create a new FOCUS dataset record. Returns the dataset ID to use with insert_focus_rows. Call this once per upload, then call insert_focus_rows one or more times to load rows.",
+      inputSchema: schema.shape,
+    },
     async ({ name, focusVersion, datasetType }) => {
       if (datasetType === "contract_commitment" && focusVersion !== "1.3") {
         return {

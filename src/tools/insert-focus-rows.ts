@@ -20,10 +20,13 @@ const schema = z.object({
 });
 
 export function registerInsertFocusRowsTool(server: McpServer, db: SqlStorage) {
-  server.tool(
+  server.registerTool(
     "insert_focus_rows",
-    "Insert FOCUS rows into an existing dataset. All rows are validated against the FOCUS schema before any are written — if any row fails validation, the entire batch is rejected with the row index and error details. Can be called multiple times for the same dataset to load data in chunks.",
-    schema.shape,
+    {
+      description:
+        "Insert FOCUS rows into an existing dataset. All rows are validated against the FOCUS schema before any are written — if any row fails validation, the entire batch is rejected with the row index and error details. Can be called multiple times for the same dataset to load data in chunks.",
+      inputSchema: schema.shape,
+    },
     async ({ datasetId, version, datasetType, rows }) => {
       const result = await Effect.runPromise(
         insertRows(datasetId, rows, version as FocusVersion, datasetType as DatasetType).pipe(

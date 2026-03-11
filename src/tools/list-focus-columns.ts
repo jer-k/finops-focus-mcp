@@ -107,10 +107,13 @@ export function listFocusColumns(version: FocusVersion, featureLevel?: string, c
 }
 
 export function registerListFocusColumnsTool(server: McpServer) {
-  server.tool(
+  server.registerTool(
     "list-focus-columns",
-    "List and filter FOCUS spec columns for a given version. Returns column metadata including ID, display name, type, data type, and feature level. Supports filtering by feature level (Mandatory/Conditional/Recommended/Optional), column type (Dimension/Metric), and free-text search on column ID or description. For v1.3, results include a dataset field indicating whether the column belongs to the Cost and Usage or Contract Commitment dataset.",
-    schema.shape,
+    {
+      description:
+        "List and filter FOCUS spec columns for a given version. Returns column metadata including ID, display name, type, data type, and feature level. Supports filtering by feature level (Mandatory/Conditional/Recommended/Optional), column type (Dimension/Metric), and free-text search on column ID or description. For v1.3, results include a dataset field indicating whether the column belongs to the Cost and Usage or Contract Commitment dataset.",
+      inputSchema: schema.shape,
+    },
     async ({ version, featureLevel, columnType, search }) => {
       const result = listFocusColumns(version as FocusVersion, featureLevel, columnType, search);
       return {

@@ -26,10 +26,13 @@ export function searchFocusQueries(version: FocusVersion, search?: string): Focu
 }
 
 export function registerSearchFocusQueriesTool(server: McpServer) {
-  server.tool(
+  server.registerTool(
     "search_focus_queries",
-    "Search and discover available FOCUS use-case queries for a given spec version. Returns query IDs, names, SQL, and parameters. Use the returned query IDs with execute_focus_query.",
-    schema.shape,
+    {
+      description:
+        "Search and discover available FOCUS use-case queries for a given spec version. Returns query IDs, names, SQL, and parameters. Use the returned query IDs with execute_focus_query.",
+      inputSchema: schema.shape,
+    },
     async ({ version, search }) => {
       const queries = searchFocusQueries(version, search);
       return {
