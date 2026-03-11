@@ -6,7 +6,7 @@
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "format": "biome format --write .",
-    "generate": "tsx scripts/generate-focus-docs.ts",
+    "generate": "tsx scripts/generate-focus-docs.ts && biome format --write src/focus/*/columns.jsonc",
     "lint:fix": "biome lint --write .",
     "start": "wrangler dev",
     "cf-typegen": "wrangler types",
